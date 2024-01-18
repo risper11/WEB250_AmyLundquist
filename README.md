@@ -1,14 +1,7 @@
 Amy Lundquist
 
+http://web250-amylundquist.us-east-2.elasticbeanstalk.com/
 
+I am taking WEB250 because it is the last class I need to get my Web Development AAS. I have studied various degrees over the last 12 years of my life, but have never finished any due to school related depresssion. However, I am determined to finish something.
 
-
-
-######
-//Private git repository named WEB250 Your Name, with the name matching your name as it is displayed in Blackboard.
-Repository shared with bj28602@harpercollege.edu as a collaborator.
-README created for the repository that includes your name, a link to your AWS Elastic Beanstalk website, and a paragraph that describes why you are taking this course and how you intend to use server-side scripting in your world.
-A folder structure that includes /Assignment 1 and supporting Dockerfile and Hello Name files.
-grammarly.com used to verify readme content spelling and grammar.
-Source code files reviewed for spelling, grammar, and formatting.
-Only submit functioning code. Use email for questions.
+I currently work at Palatine Library in their Technology department. My primary responsibility is running their makerspace, but I've also been a webmaster for as long as I've worked there. I enjoy working with websites from a front-end perspective, and I'm looking forward to learning about it from a back-end perspective.
