@@ -3,9 +3,10 @@ from datetime import datetime
 date = datetime.now()
 day = date.strftime("%m/%d/%Y")
 time = date.strftime("%H:%M:%S")
-url = request('host_url')
-#ip = flask.request('remote_addr')
-#os = flask.request.headers.get('User-Agent')
+#url = flask.request.host_url
+url = flask.request.base_url
+ip = flask.request.remote_addr
+os = flask.request.headers.get('User-Agent')
 
 
 def main():

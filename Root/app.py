@@ -63,7 +63,7 @@ def route_path(path):
     
     else:
         # Process any unrecognized route as a static file request
-        return flask.send_from_directory(app.static_folder, path)  
+        return flask.render_template('error.html', data=data)  
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
