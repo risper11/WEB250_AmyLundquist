@@ -22,6 +22,8 @@
 #   https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
 
 import flask
+import lesson1
+import lesson2
 
 app = flask.Flask(__name__)
 
@@ -31,14 +33,34 @@ def show_root():
 
 @app.route("/<path:path>")
 def route_path(path):
-    if path == "code":
-        return hello.main()
-    elif path == "template":
-        data = {
-            "greeting": "Hello",
-            "name": "world"
-        }
-        return flask.render_template('template.html', data=data)
+#    if path == "code":
+#        return hello.main()
+#    elif path == "template":
+#        data = {
+#            "greeting": "Hello",
+#            "name": "world"
+#        }
+#        return flask.render_template('template.html', data=data)
+#    else:
+#        # Process any unrecognized route as a static file request
+#        return flask.send_from_directory(app.static_folder, path)  
+    if path == "lesson1":
+        return lesson1.main()
+    elif path == "lesson2":
+        return lesson2.main()
+    
+#    elif path == "lesson3":
+#    elif path == "lesson4":   
+#    elif path == "lesson5": 
+#    elif path == "lesson6": 
+#    elif path == "lesson7": 
+#    elif path == "lesson7":  
+#    elif path == "lesson8": 
+#    elif path == "lesson9": 
+#    elif path == "lesson10": 
+#    elif path == "lesson11": 
+#    elif path == "lesson12":
+    
     else:
         # Process any unrecognized route as a static file request
         return flask.send_from_directory(app.static_folder, path)  
