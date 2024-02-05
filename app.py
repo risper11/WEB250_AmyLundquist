@@ -22,8 +22,8 @@
 #   https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
 
 import flask
-import lesson1
-import lesson2
+from Assignment2 import lesson1, lesson2
+from Assignment3 import lesson3
 
 app = flask.Flask(__name__)
 
@@ -49,8 +49,9 @@ def route_path(path):
     elif path == "lesson2":
         #return lesson2.main()
         return lesson2.main()
+    elif path == "lesson3":
+        return lesson3.main()
     
-#    elif path == "lesson3":
 #    elif path == "lesson4":   
 #    elif path == "lesson5": 
 #    elif path == "lesson6": 

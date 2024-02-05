@@ -31,53 +31,56 @@ EMPTY_PARAGRAPH = """
 """
 
 RECTANGLE_FORM = """
+<h1 class="header3">Area Calculator</h1>
 <form method="GET">
-<h2>Rectangle Area Calculator</h2>
+<h2 class="header3">Rectangle Area Calculator</h2>
 <label for="length">Enter Length:</label>
-<input type="text" id="length" name="length">
+<input type="text" id="length" name="length"><br>
 <label for="width">Enter Width:</label>
-<input type="text" id="width" name="width">
+<input type="text" id="width" name="width"><br>
 <input type="submit" value="Submit">
 </form>
 """
 TRIANGLE_FORM = """
 <form method="GET">
-<h2>Triangle Area Calculator</h2>
+<h2 class="header3">Triangle Area Calculator</h2>
 <label for="base">Enter Base:</label>
-<input type="text" id="base" name="base">
+<input type="text" id="base" name="base"><br>
 <label for="height">Enter Height:</label>
-<input type="text" id="height" name="height">
+<input type="text" id="height" name="height"><br>
 <input type="submit" value="Submit">
 </form>
 """
 DIAMETER_FORM = """
 <form method="GET">
-<h2>Circle Area Calculator</h2>
+<h2 class="header3">Circle Area Calculator</h2>
 <label for="diameter">Enter Diameter:</label>
-<input type="text" id="diameter" name="diameter">
+<input type="text" id="diameter" name="diameter"><br>
 <input type="submit" value="Submit">
 </form>
 """
 RADIUS_FORM = """
 <form method="GET">
 <label for="radius">Enter Radius:</label>
-<input type="text" id="radius" name="radius">
+<input type="text" id="radius" name="radius"><br>
 <input type="submit" value="Submit">
 </form>
 """
 CIRCUMFERENCE_FORM = """
 <form method="GET">
 <label for="circumference">Enter Circumference:</label>
-<input type="text" id="circumference" name="circumference">
+<input type="text" id="circumference" name="circumference"><br>
 <input type="submit" value="Submit">
 </form>
 """
 
 
-@app.route('/', methods=["GET"])
-def root_get():
+def main():
   return process_get_request()
 
+#@app.route('/', methods=["GET"])
+#def root_get():
+#  return process_get_request()
 
 #@app.route('/', methods=["POST"])
 #def root_post():
@@ -90,8 +93,9 @@ def process_get_request():
   circle_radius_form = process_circle_radius(request)
   circle_circumference_form = process_circle_circumference(request)
 
-  result = rectangle_form + triangle_form
-  result += circle_diameter_form + circle_radius_form +  circle_circumference_form
+  result = flask.render_template('assignment3.html')
+  result += rectangle_form + triangle_form
+  result += circle_diameter_form + circle_radius_form + circle_circumference_form
   return result
 
 
@@ -110,15 +114,16 @@ def process_rectangle(request):
 
   #result += EMPTY_PARAGRAPH
   return result
+
 def process_triangle(request):
   result = TRIANGLE_FORM
 
   try:
-    length = float(request.args["base"])
-    width = float(request.args["height"])
-    recArea = base * height * 0.5
+    base = float(request.args["base"])
+    height = float(request.args["height"])
+    tArea = base * height * 0.5
     result += "<p> The area of the triangle is " + str(
-        recArea) + ".</p>"
+        tArea) + ".</p>"
 
   except:
     result += EMPTY_PARAGRAPH

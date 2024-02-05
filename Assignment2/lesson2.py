@@ -20,4 +20,4 @@ def main():
             #"ip": ip,
            # "os": os
         }
-    return flask.render_template('template.html', data=data)
+    return flask.render_template('assignment2.html', data=data)
